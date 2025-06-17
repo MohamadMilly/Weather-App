@@ -35,7 +35,7 @@ function showWeatherStatus(
 
 
 function getWeatherIcon(icon) {
-  document.querySelector("body").style.backgroundImage = `url("../assests/${icon}.jpg")`;
+  document.querySelector("body").style.backgroundImage = `url("./${icon}.jpg")`;
   switch (icon) {
     case "clear-day":
       return iconsSvg.clearSky;
