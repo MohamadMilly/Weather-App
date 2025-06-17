@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="cb2a8dae93ed16bfb01a.js" type="module"></script>
+    <link rel="stylesheet" href="197e3a8b2464ece05a60.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poetsen+One&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Clima Weather App</title>
+  <script defer src="main.js"></script></head>
+  <body>
+    <div class="loading-background"><div class="loader"></div></div>
+    <div class="navbar">
+      <div class="logo">Clima</div>
+      <div class="form">
+        <input type="text" class="search-input" />
+        <button class="search-button">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 -960 960 960"
+            width="25px"
+            height="25px"
+            fill="#FFFFFF"
+          >
+            <path
+              d="M792-120.67 532.67-380q-30 25.33-69.64 39.67Q423.39-326 378.67-326q-108.44 0-183.56-75.17Q120-476.33 120-583.33t75.17-182.17q75.16-75.17 182.5-75.17 107.33 0 182.16 75.17 74.84 75.17 74.84 182.27 0 43.23-14 82.9-14 39.66-40.67 73l260 258.66-48 48Zm-414-272q79.17 0 134.58-55.83Q568-504.33 568-583.33q0-79-55.42-134.84Q457.17-774 378-774q-79.72 0-135.53 55.83-55.8 55.84-55.8 134.84t55.8 134.83q55.81 55.83 135.53 55.83Z"
+            />
+          </svg>
+        </button>
+        <button class="convert-unit-button">Unit : F</button>
+      </div>
+    </div>
+    <div class="main-content">
+      <div class="thisDay-main-info">
+        <div class="thisDay-icon"></div>
+        <div>
+          <h1 class="location"></h1>
+          <div class="thisDay-temperature"></div>
+          <div class="thisDay-description"></div>
+          <div class="thisDay-date"></div>
+        </div>
+      </div>
+      <div class="secondary-info">
+        <div class="humidity">
+          <div class="icon humidity-icon"></div>
+          <span>Humidity</span>
+          <span class="thisDay-humidity"></span>
+        </div>
+        <div class="wind-speed">
+          <div class="icon wind-speed-icon"></div>
+          <span>Wind Speed</span>
+          <span class="thisDay-wind-speed"></span>
+        </div>
+        <div class="sunrise">
+          <div class="icon sunrise-icon"></div>
+          <span>Sun Rise</span>
+          <span class="thisDay-sunrise"></span>
+        </div>
+        <div class="sunset">
+          <div class="icon sunset-icon"></div>
+          <span>Sun Set</span>
+          <span class="thisDay-sunset"></span>
+        </div>
+        <div class="uvindex">
+          <div class="icon uvindex-icon"></div>
+          <span>UV index</span>
+          <span class="thisDay-uvindex"></span>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
