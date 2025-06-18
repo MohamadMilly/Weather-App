@@ -88,7 +88,6 @@ function formatDate(date) {
 
 }
 
-console.log(formatDate("2025-6-17"));
 
 
 

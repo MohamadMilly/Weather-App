@@ -1,5 +1,5 @@
-import {getTemperature} from "./utlis.js";
-import {currentUnit} from "./utlis.js"
+import { getTemperature } from "./utlis.js";
+import { currentUnit } from "./utlis.js";
 import { iconsSvg } from "./icons.js";
 import { formatDate } from "./utlis.js";
 
@@ -14,28 +14,27 @@ function showWeatherStatus(
   sunriseElement,
   sunsetElement,
   uvindexElement,
-  icon,
-  
+  icon
 ) {
-  
   locationElement.textContent = data.city;
   dateElement.textContent = formatDate(data.date);
-  temperatureElement.textContent = getTemperature(data.temperature,currentUnit);
+  temperatureElement.textContent = getTemperature(
+    data.temperature,
+    currentUnit
+  );
   descriptionElement.textContent = data.description;
   humidityElement.textContent = data.humidity;
-  windSpeedElement.textContent = data.windSpeed + "Km";
+  windSpeedElement.textContent = data.windSpeed + "Km/h";
   icon.innerHTML = getWeatherIcon(data.icon);
   sunriseElement.textContent = data.sunrise;
   sunsetElement.textContent = data.sunset;
   uvindexElement.textContent = data.uvindex;
-  
 
-  
+  changeBackground(data.icon);
+  // changing background
 }
 
-
 function getWeatherIcon(icon) {
-  document.querySelector("body").style.backgroundImage = `url("./${icon}.jpg")`;
   switch (icon) {
     case "clear-day":
       return iconsSvg.clearSky;
@@ -68,10 +67,12 @@ function getWeatherIcon(icon) {
     case "thunder-rain":
       return iconsSvg.thunderRain;
   }
-  
+
   return "Not available Icon";
 }
 
-
+function changeBackground(icon) {
+  document.querySelector("body").style.backgroundImage = `url("./${icon}.jpg")`;
+}
 
 export { showWeatherStatus };

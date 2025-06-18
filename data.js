@@ -1,9 +1,8 @@
-// eslint-disable-next-line
 const API_KEY = "LK4WZR3576JYHX48RDMHM8Y4S";
 async function fetchData(location) {
   try {
     const response = await fetch(
-      `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?unitGroup=us&key=EL34NM8XBE8PNVXKF274QDPJG&contentType=json`,
+      `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?unitGroup=us&key=${API_KEY}&contentType=json`,
       { mode: "cors" }
     );
     if (response.status === 200) {
@@ -11,13 +10,14 @@ async function fetchData(location) {
       return data;
     }
   } catch (error) {
-    return alert("Something went wrong", error);
+    return console.error("Something went wrong", error);
   }
 }
 
 async function processData(data, day) {
   if (!data) return;
   const currentDay = data.days[day];
+  const currentConditions = data.currentConditions;
   if (!currentDay) {
     console.error("This day does not available");
     return;
@@ -25,14 +25,14 @@ async function processData(data, day) {
   return {
     city: data.resolvedAddress,
     date: currentDay.datetime,
-    temperature: currentDay.temp,
+    temperature: currentConditions.temp,
     description: currentDay.description,
-    humidity: currentDay.humidity,
-    windSpeed: currentDay.windspeed,
-    icon: currentDay.icon,
-    sunrise:currentDay.sunrise,
-    sunset:currentDay.sunset,
-    uvindex:currentDay.uvindex
+    humidity: currentConditions.humidity,
+    windSpeed: currentConditions.windspeed,
+    icon: currentConditions.icon,
+    sunrise:currentConditions.sunrise,
+    sunset:currentConditions.sunset,
+    uvindex:currentConditions.uvindex
   };
 }
 
@@ -47,4 +47,3 @@ export { getWeatherDataForCity };
 
 
 
-fetchData("damascus").then(console.log);

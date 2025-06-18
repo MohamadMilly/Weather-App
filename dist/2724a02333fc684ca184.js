@@ -74,7 +74,7 @@ searchButton.addEventListener("click", () => {
       );
       console.log(result);
     })
-    .catch((error) => console.error("Something went wrong", error));
+    .catch((error) => console.error("Something went wrong",error));
 });
 
 convertUnitButton.addEventListener("click", () => {
@@ -90,3 +90,5 @@ convertUnitButton.addEventListener("click", () => {
   );
   convertUnitButton.textContent = "Unit : " + currentUnit;
 });
+
+
