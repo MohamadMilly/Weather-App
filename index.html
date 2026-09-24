@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   
+    <title>Weather app</title>
+  <script defer src="index.js"></script></head>
+  <body>
+    <div class="error-container"></div>
+    <header>
+      <form id="search-form">
+        <div>
+          <label for="search-input">Search location:</label>
+          <input type="text" required id="search-input" />
+        </div>
+        <button>Search</button>
+      </form>
+      <button id="toggle-unit-button" type="button">Show &deg;C</button>
+    </header>
+    <main class="weather-container"></main>
+    <div class="loading-container"></div>
+  </body>
+</html>
